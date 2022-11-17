@@ -1,15 +1,10 @@
 package antifraud.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import antifraud.model.enums.Region;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -18,6 +13,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +21,8 @@ public class Transaction {
     Long amount;
     String ip;
     String number;
-    String region;
+    @Enumerated(EnumType.STRING)
+    Region region;
     LocalDateTime date;
 
     @Override
