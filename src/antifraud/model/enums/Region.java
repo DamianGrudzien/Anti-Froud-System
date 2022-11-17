@@ -1,5 +1,5 @@
 package antifraud.model.enums;
 
 public enum Region {
-    EAP, ECAP, HIC, LAC, MENA, SA, SSA
+    EAP, ECA, HIC, LAC, MENA, SA, SSA
 }
